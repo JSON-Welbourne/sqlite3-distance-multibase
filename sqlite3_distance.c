@@ -1,8 +1,6 @@
   /*
  * distance - hamming distance between same-length strings
  * in SQLite3 in a variety of numbered and named bases
- * Copyright 2021 Jason Welbourne <JSON.Welbourne@gmail.com>
- * All rights reserved.
  */
 #include <stdlib.h>
 #include <stdio.h>
