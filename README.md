@@ -15,7 +15,8 @@ sqlite> SELECT load_extension('./sqlite3_distance.so', 'distance_init');
 
 Loaded sqlite3_distance!
 
-    any string or integer representing an integer between 2 and 255 (examples: 2, '2', 10, '16', '64'...)
+    any string or integer representing an integer between 2 and 255 
+    (examples: 2, '2', 10, '16', '64'...)
     32_RFC4648
     32_Crockford
     32_Hex
