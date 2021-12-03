@@ -1,36 +1,44 @@
 # sqlite3_distance_multibase
-How to use:
+Installation:
 
-sudo docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp gcc:latest make
+    sudo docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp gcc:latest make
 
-OR
+OR, if you have the build tools, 
 
-sudo make
+    sudo make
 
-    cc -shared -fPIC -o sqlite3_distance.so sqlite3_distance.c -lsqlite3
+Loading:
 
-sqlite3
+    SELECT load_extension('./sqlite3_distance.so', 'distance_init');
 
-sqlite> SELECT load_extension('./sqlite3_distance.so', 'distance_init');
-
-Loaded sqlite3_distance!
-
-    any string or integer representing an integer between 2 and 255 
-    (examples: 2, '2', 10, '16', '64'...)
-    32_RFC4648
-    32_Crockford
-    32_Hex
-    32_Geohash
-    32_WordSafe
-    z_base_32
-    ascii85
-    85_RFC1924
-    basE91
-    
 Usage:
 
     SELECT distance({type},{base},{stringA},{stringB});
+
+base:
+
+    any string or integer representing an integer between 2 and 255 
+
+    (examples: 2, '2', 10, '16', '64'...)
     
+    32_RFC4648
+    
+    32_Crockford
+    
+    32_Hex
+    
+    32_Geohash
+    
+    32_WordSafe
+    
+    z_base_32    
+    
+    ascii85
+    
+    85_RFC1924
+    
+    basE91
+
 Print Tables:
 
     SELECT distance({type},{base},NULL,NULL);
